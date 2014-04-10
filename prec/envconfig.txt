@@ -1,0 +1,12 @@
+env:saphire# one word of environment(btdante btstaging saphire)
+build:2670# build number
+uid:13# user number
+feature:contact calendar mail task settings# which features you want to run? contact/calendar/mail/task/settings
+setting:setGmt8 addAlias# settings -> setGmt8/addAlias
+simpleContacts:2# how many simple contacts you want to create
+fullInfoCntcts:2# how many contacts with full info
+groups:3# how many contact groups
+amount:5# how many mails
+allDay:2# how many all day events you want to create (currently created in the day after 6 days)
+taskAmount:1# Note!Each one contains 3*3=9 tasks (High/Normal/Low, incomplete/complete/nees action)
+aliasAmount:3# how many amount you want to create

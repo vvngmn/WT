@@ -1,0 +1,13 @@
+env:btdante# one word of environment(btdante or btstaging)
+port:8080# port
+build:2241# build number
+uid:2# user number
+feature:settings# which features you want to run? 
+setting:addAlias# settings -> setGmt8/addAlias
+simpleContacts:0# how many simple contacts you want to create
+fullInfoCntcts:200# how many contacts with full info
+groups:3# how many contact groups
+amount:5# how many mails
+allDay:2# how many all day events you want to create (currently created in the day after 6 days)
+taskAmount:1# Note!Each one contains 3*3=9 tasks (High/Normal/Low, incomplete/complete/nees action)
+aliasAmount:195# how many amount you want to create
