@@ -1,0 +1,17 @@
+#save as a draft
+<request>
+<mail action="msgsaveasdraft" accountId="" windowId="1" to="aaa@aaa.com" cc="" bcc="" subject="sub hahah"
+saveinsent="true" returnReceipt="false" rootMessageUID="" priority="3" from="qa.793.user42@uat.cpcloud.co.uk"
+bodytype="plain" attach-fileid="touchx0x1378880972166" auto="false">
+<body>ahaha</body>
+</mail>
+</request>
+
+#send mail
+<request>
+<mail action="msgsend" accountId="" windowId="1" to="aaa@aaa.com" cc="" bcc="" subject="sub hahah"
+saveinsent="true" returnReceipt="false" rootMessageUID="2" priority="3" from="qa.793.user42@uat.cpcloud.co.uk"
+bodytype="plain" foldername="Drafts" deletedraftuids="2" attach-fileid="touchx0x1378881254789">
+<body>ahahaha</body>
+</mail>
+</request>

@@ -1,0 +1,13 @@
+<request>
+<calendar action="createEvent" timezone="-60">
+<event calendarId="http://btdantebe.cpth.ie:5229/calendars/build768.user29@test.ie/06d25370-55de-0001-9555-c520fe13eb13@62e083fb-3ede-0001-8e3d-d9e95f4c104f" 
+location="" summary="daily repeat for 5 days" busyStatus="BUSY" 
+startTime="1377817440" localStart="20130830T070400" endTime="1377821040" localEnd="20130830T080400">
+<description/>
+<categories>general
+</categories>
+<xproperty name="X-EVENT-TYPE" value="General"/>
+<recurrence freq="daily" localUntil="20130902T235959" interval="1"/>
+</event>
+</calendar>
+</request>
