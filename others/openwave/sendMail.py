@@ -10,11 +10,11 @@ import smtplib
 from email.MIMEText import MIMEText
 
 # set up email account
-mail_host="smtptst.btdantefe01.cpth.ie" 				#   smtp.163.com  btdantefe01.cpth.ie smtp.163.com  mail.criticalpath.net  imap.gmail.com
-mail_user="build713.user23" 						#    qa.user16@test.ie  laszlo_v  testtouchui
-mail_pass="password" 						#     laszlo
-mail_postfix="test.ie" 						#   163.com test.ie
-to_list = ["build713.user23@test.ie"] 		#   u13@pk1.dom  Boboom_v@163.com  qa.713.user17@uat.cpcloud.co.uk  testtouchui@gmail.com
+mail_host="smtp.163.com" 				#   smtp.163.com  btdantefe01.cpth.ie smtp.163.com  mail.criticalpath.net  imap.gmail.com
+mail_user="laszlo_v" 						#    qa.user16@test.ie  laszlo_v  testtouchui
+mail_pass="laszlo" 						#     laszlo
+mail_postfix="163.com test.ie" 						#   163.com test.ie
+to_list = ["otosan1@openwave.com"] 		#   u13@pk1.dom  Boboom_v@163.com  qa.713.user17@uat.cpcloud.co.uk  testtouchui@gmail.com
 
 
 startTime=datetime.datetime.now()
@@ -67,7 +67,7 @@ def sendMail(mailNumber):
 
 		
 if __name__ == '__main__':
-	for i in range(3):
+	for i in range(999):
 		sendMail(str(i))
 		time.sleep(1)
 		print "Sending No.%s mail to %s"%(str(i),to_list)
