@@ -10,16 +10,16 @@ urllib2.socket.setdefaulttimeout(timeout)
 opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(CookieJar())) 
 
 def login(usr):
-	password = 'password'
-	if 'dom' in dom:
-		user = '%s.user%s@%s'%(build,usr,dom)
-	if 'uat' in dom:
-		user = 'qa.%s.user%s@%s'%(build,usr,dom)
-	if 'opal' in dom:
-		user = 'mr1.rc6.user%s@%s'%(usr,dom) 
-		password = 'p'
+	password = 'p'
+	# if 'dom' in dom:
+		# user = '%s.user%s@%s'%(build,usr,dom)
+	# if 'uat' in dom:
+		# user = 'qa.%s.user%s@%s'%(build,usr,dom)
+	# if 'opal' in dom:
+		# user = 'mr1.rc6.user%s@%s'%(usr,dom) 
+		# password = 'p'
 	global CURRENT_USER
-	CURRENT_USER = user
+	CURRENT_USER = 'u11@test2.com'
 	print 'testing..' + user
 	
 	try:
@@ -148,21 +148,21 @@ if __name__ == '__main__':
 	except Exception,e:	# for my local test by direct run
 		print e
 		global urlLink, build, dom, usersN, simpleContacts, fullInfoCntcts, groups, amount, allDay, feature, setting,aliasAmount
-		urlLink = 'http://saphire.qa.laszlosystems.com:6020/cp/dd' #ENV	http://btdantefe01.cpth.ie:8080/cp/dd	http://btdantefe01.cpth.ie:6030/cp/dd   http://http.btstaging.cpcloud.co.uk/cp/dd
-		build = '2754'
-		if 'btdante' in urlLink:
-			dom = 'qa.dom' #	uat.cpcloud.co.uk	qa.dom
-		elif 'btstaging' in urlLink:
-			dom = 'uat.cpcloud.co.uk'
-		elif 'saphire' in urlLink:
-			dom = 'opal.qa.laszlosystems.com'
-		else:
-			print 'Please check local urlLink'
+		urlLink = 'http://172.20.1.179:8080/kiwi/dd' #ENV	http://btdantefe01.cpth.ie:8080/cp/dd	http://btdantefe01.cpth.ie:6030/cp/dd   http://http.btstaging.cpcloud.co.uk/cp/dd
+		# build = '2754'
+		# if 'btdante' in urlLink:
+			# dom = 'qa.dom' #	uat.cpcloud.co.uk	qa.dom
+		# elif 'btstaging' in urlLink:
+			# dom = 'uat.cpcloud.co.uk'
+		# elif 'saphire' in urlLink:
+			# dom = 'opal.qa.laszlosystems.com'
+		# else:
+			# print 'Please check local urlLink'
 		
-		testSetting(usersN=[6],gmt=8,aliasAmount=200)
+		# testSetting(usersN=[11],gmt=8,aliasAmount=1)
 		# testMail(usersN=[40],amount=20)
 		# testContact(usersN=[40],simpleContacts=1, fullInfoCntcts=10, groups=1)
-		# testCalendar(usersN=[40],allDay=1)
+		testCalendar(usersN=[40],allDay=1)
 		# testTask(usersN=[40],dueTime=True, amount=1)
 		# testTask(usersN=[41],clearup=True)
 		
