@@ -1,0 +1,35 @@
+# curl -sk -H "Authorization: Bearer IPW-le7DgycrkXcYuljs_DASsTOmgJT0E7NRVX6_zT0" -X POST -d @roll.json https://openshift-134.lab.sjc.redhat.com:8443/oapi/v1/namespaces/xiaocwan-t/deploymentconfigrollbacks
+
+
+
+HTTP POST https://openshift-134.lab.sjc.redhat.com:8443/oapi/v1/namespaces/bbnrv/deploymentconfigrollbacks
+
+
+POST /oapi/v1/namespaces/xiaocwan-t/deploymentconfigrollbacks HTTP/1.1
+User-Agent: curl/7.29.0
+Host: openshift-134.lab.sjc.redhat.com:8443
+Accept: */*
+Authorization: Bearer 45nEriRF7thDXwUyFAHO2JSCmPKgG4VNnr0cdsCl1Lg
+Content-Length: 275
+Content-Type: application/x-www-form-urlencoded
+Connection: close
+
+
+{"kind":"DeploymentConfigRollback","apiVersion":"v1",
+
+"spec":{"from":{"name":"hooks-1"},
+"includeTriggers":false,"includeTemplate":true,"includeReplicationMeta":false,"includeStrategy":false}
+
+}
+
+===================================== 
+=> {:headers=>
+  {"Accept"=>"application/json",
+   "Content-Type"=>"application/json",
+   "Authorization"=>"Bearer 7mhc528e-1yx_Un9i2y71sIZU2J4C8qzjsG2TCVufuU"},
+ 
+
+:payload=>
+  "{"apiVersion":"v1","kind":"DeploymentConfigRollback","spec":{"from":{"name":"hooks-1"},"includeTriggers":"false","includeTemplate":"true","includeReplicationMeta":"false","includeStrategy":"false"}}",
+
+ :url=>"https://openshift-134.lab.sjc.redhat.com:8443/oapi/v1/namespaces/0jzgn/deploymentconfigrollbacks"}

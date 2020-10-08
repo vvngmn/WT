@@ -1,0 +1,5 @@
+在使用user_info_position_introduction.txt时请按照以下模板：各字段必须用一个空格隔开
+
+李四 后台测试 fwang1982@sina.com
+张三 前端开发 test35@opal.qa.laszlosystems.com
+王五 性能测试 test36@opal.qa.laszlosystems.com
