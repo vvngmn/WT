@@ -1,0 +1,385 @@
+================== COMMON DATA Wed Apr  3 13:43:54 CST 2019 ============================================
+#oc get clusterversion
+NAME      VERSION     AVAILABLE   PROGRESSING   SINCE   STATUS
+version   4.0.0-0.9   True        False         145m    Cluster version is 4.0.0-0.9
+#oc get clusteroperator
+NAME                                 VERSION     AVAILABLE   PROGRESSING   FAILING   SINCE
+authentication                       4.0.0-0.9   True        False         False     10m
+cloud-credential                     4.0.0-0.9   True        False         False     154m
+cluster-autoscaler                   4.0.0-0.9   True        False         False     155m
+console                              4.0.0-0.9   True        False         False     145m
+dns                                  4.0.0-0.9   True        False         False     155m
+image-registry                       4.0.0-0.9   True        False         False     146m
+ingress                              4.0.0-0.9   True        False         False     146m
+kube-apiserver                       4.0.0-0.9   True        False         False     151m
+kube-controller-manager              4.0.0-0.9   True        False         False     150m
+kube-scheduler                       4.0.0-0.9   True        False         False     151m
+machine-api                          4.0.0-0.9   True        False         False     155m
+machine-config                       4.0.0-0.9   True        False         False     154m
+marketplace                          4.0.0-0.9   True        False         False     148m
+monitoring                           4.0.0-0.9   True        False         False     145m
+network                              4.0.0-0.9   True        False         False     155m
+node-tuning                          4.0.0-0.9   True        False         False     149m
+openshift-apiserver                  4.0.0-0.9   True        False         False     149m
+openshift-controller-manager         4.0.0-0.9   True        False         False     150m
+openshift-samples                    4.0.0-0.9   True        False         False     147m
+operator-lifecycle-manager           4.0.0-0.9   True        False         False     155m
+operator-lifecycle-manager-catalog   4.0.0-0.9   True        False         False     155m
+service-ca                           4.0.0-0.9   True        False         False     154m
+service-catalog-apiserver            4.0.0-0.9   True        False         False     10m
+service-catalog-controller-manager   4.0.0-0.9   True        False         False     10m
+storage                              4.0.0-0.9   True        False         False     149m
+================== UI-TEAM DATA Wed Apr  3 13:43:58 CST 2019 ============================================
+#oc get pods -n openshift-console -o yaml | grep console.openshift.io/image | uniq
+      console.openshift.io/image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4d59f04482e59193f4120df4291481e46f52dfe997819d1c462b022a45d5fbd1
+#oc get pods -n openshift-console-operator -o yaml | grep 'image:'|uniq
+      image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:dcc9d8a4a64529c713fea1b3563ee795f5a4710d55899d69fcdd7aa207d3c5b5
+#oc get clusteroperator console -o yaml
+apiVersion: config.openshift.io/v1
+kind: ClusterOperator
+metadata:
+  creationTimestamp: 2019-04-03T03:14:37Z
+  generation: 1
+  name: console
+  resourceVersion: "54059"
+  selfLink: /apis/config.openshift.io/v1/clusteroperators/console
+  uid: 9d010f9d-55be-11e9-bea8-06229b4180c6
+spec: {}
+status:
+  conditions:
+  - lastTransitionTime: 2019-04-03T03:14:38Z
+    reason: AsExpected
+    status: "False"
+    type: Failing
+  - lastTransitionTime: 2019-04-03T05:33:55Z
+    reason: AsExpected
+    status: "False"
+    type: Progressing
+  - lastTransitionTime: 2019-04-03T03:18:40Z
+    reason: AsExpected
+    status: "True"
+    type: Available
+  - lastTransitionTime: 2019-04-03T03:14:37Z
+    reason: AsExpected
+    status: "True"
+    type: Upgradeable
+  extension: null
+  relatedObjects:
+  - group: operator.openshift.io
+    name: cluster
+    resource: consoles
+  - group: config.openshift.io
+    name: cluster
+    resource: consoles
+  - group: config.openshift.io
+    name: cluster
+    resource: infrastructures
+  - group: oauth.openshift.io
+    name: console
+    resource: oauthclients
+  - group: ""
+    name: openshift-console-operator
+    resource: namespaces
+  - group: ""
+    name: openshift-console
+    resource: namespaces
+  versions:
+  - name: operator
+    version: 4.0.0-0.9
+#oc get all -n uiupgrade
+NAME                                   READY   STATUS              RESTARTS   AGE
+pod/hello-daemonset-6pfrd              1/1     Running             0          45s
+pod/hello-daemonset-bxdml              1/1     Running             0          45s
+pod/hello-daemonset-wbldj              1/1     Running             0          45s
+pod/hello-openshift-59fc4c4f6f-b62nr   1/1     Running             0          40s
+pod/hello-openshift-59fc4c4f6f-b6bvz   1/1     Running             0          40s
+pod/hello-openshift-59fc4c4f6f-fxl2x   1/1     Running             0          41s
+pod/hello-openshift-59fc4c4f6f-gz8zq   1/1     Running             0          40s
+pod/hello-openshift-59fc4c4f6f-jwmt7   1/1     Running             0          40s
+pod/hello-openshift-59fc4c4f6f-scjvk   1/1     Running             0          41s
+pod/hello-openshift-59fc4c4f6f-sjwm8   1/1     Running             0          40s
+pod/hello-openshift-59fc4c4f6f-szhlf   1/1     Running             0          41s
+pod/hello-openshift-59fc4c4f6f-wj5dt   1/1     Running             0          40s
+pod/hello-openshift-59fc4c4f6f-x4vdt   1/1     Running             0          40s
+pod/hooks-1-7wrfv                      1/1     Running             0          35s
+pod/hooks-1-deploy                     0/1     Completed           0          43s
+pod/musicstore-1-build                 0/1     Init:0/2            0          9s
+pod/postgresql-1-deploy                0/1     ContainerCreating   0          7s
+pod/ruby-ex-1-build                    1/1     Running             0          48s
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicationcontroller/hooks-1        1         1         1       44s
+replicationcontroller/postgresql-1   1         0         0       9s
+NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/musicstore   ClusterIP   172.30.103.52    <none>        8080/TCP   10s
+service/postgresql   ClusterIP   172.30.202.120   <none>        5432/TCP   10s
+service/ruby-ex      ClusterIP   172.30.198.151   <none>        8080/TCP   49s
+NAME                             DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+daemonset.apps/hello-daemonset   3         3         3       3            3           <none>          47s
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/hello-openshift   10/10   10           10          43s
+NAME                                         DESIRED   CURRENT   READY   AGE
+replicaset.apps/hello-openshift-59fc4c4f6f   10        10        10      43s
+NAME                                            REVISION   DESIRED   CURRENT   TRIGGERED BY
+deploymentconfig.apps.openshift.io/hooks        1          1         1         config
+deploymentconfig.apps.openshift.io/musicstore   0          1         0         config,image(musicstore:latest)
+deploymentconfig.apps.openshift.io/postgresql   1          1         1         config,image(postgresql:9.5)
+deploymentconfig.apps.openshift.io/ruby-ex      0          1         0         config,image(ruby-ex:latest)
+NAME                                        TYPE     FROM                  LATEST
+buildconfig.build.openshift.io/musicstore   Source   Git@rel/2.1-example   1
+buildconfig.build.openshift.io/ruby-ex      Source   Git                   1
+NAME                                    TYPE     FROM                  STATUS    STARTED          DURATION
+build.build.openshift.io/ruby-ex-1      Source   Git@c00ecd7           Running   54 seconds ago   
+build.build.openshift.io/musicstore-1   Source   Git@rel/2.1-example   Running   15 seconds ago   
+NAME                                             IMAGE REPOSITORY                                                             TAGS     UPDATED
+imagestream.image.openshift.io/musicstore        image-registry.openshift-image-registry.svc:5000/uiupgrade/musicstore                 
+imagestream.image.openshift.io/ruby-25-centos7   image-registry.openshift-image-registry.svc:5000/uiupgrade/ruby-25-centos7   latest   54 seconds ago
+imagestream.image.openshift.io/ruby-ex           image-registry.openshift-image-registry.svc:5000/uiupgrade/ruby-ex                    
+NAME                                  HOST/PORT                                                                PATH   SERVICES     PORT    TERMINATION   WILDCARD
+route.route.openshift.io/musicstore   musicstore-uiupgrade.apps.qe-upgradegroupd.qe.devcluster.openshift.com          musicstore   <all>                 None
+================== DEVEXP-TEAM  DATA Wed Apr  3 13:45:12 CST 2019 ============================================
+#oc get pods -o yaml -n openshift-image-registry | grep imageID |uniq
+      imageID: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4a015bae248dfebd5fdbe8e33e67868ae5cc3649659a582446e587e425923293
+      imageID: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:7dbbfe4476239742854a624b012f75a2737846999404bc2d33630c6bd2066e18
+#oc get pods -o yaml -n openshift-cluster-samples-operator | grep imageID |uniq
+      imageID: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:400be29c5fe63a473acd0f8c577e887a34cda7b26afa649117f0984dbb5ac940
+#oc get pods -n openshift-image-registry
+NAME                                               READY   STATUS    RESTARTS   AGE
+cluster-image-registry-operator-5559f8fdf6-8ljbz   1/1     Running   0          151m
+image-registry-5fd9fd74f-b9pdm                     1/1     Running   0          150m
+node-ca-5mw8j                                      1/1     Running   0          150m
+node-ca-9c28f                                      1/1     Running   0          150m
+node-ca-mkpvs                                      1/1     Running   0          149m
+node-ca-tz2v4                                      1/1     Running   0          148m
+node-ca-vtfxx                                      1/1     Running   0          148m
+node-ca-vx7s6                                      1/1     Running   0          150m
+#oc describe is jenkins -n openshift
+Name:			jenkins
+Namespace:		openshift
+Created:		3 hours ago
+Labels:			samples.operator.openshift.io/managed=true
+Annotations:		openshift.io/display-name=Jenkins
+			openshift.io/image.dockerRepositoryCheck=2019-04-03T03:15:21Z
+			samples.operator.openshift.io/version=4.0.0-0.9
+Image Repository:	image-registry.openshift-image-registry.svc:5000/openshift/jenkins
+Image Lookup:		local=false
+Unique Images:		1
+Tags:			2
+
+2 (latest)
+  tagged from quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ca1c9229479a5f6d4c1f10ceb92df46573ba5aed6e76368f9f2dde4acc90cb48
+    prefer registry pullthrough when referencing this tag
+
+  Provides a Jenkins 2.X server on RHEL 7. For more information about using this container image, including OpenShift considerations, see https://github.com/openshift/jenkins/blob/master/README.md.
+  Tags: jenkins
+
+  * quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ca1c9229479a5f6d4c1f10ceb92df46573ba5aed6e76368f9f2dde4acc90cb48
+      3 hours ago
+#oc describe is ruby -n openshift
+Name:			ruby
+Namespace:		openshift
+Created:		3 hours ago
+Labels:			samples.operator.openshift.io/managed=true
+Annotations:		openshift.io/display-name=Ruby
+			openshift.io/image.dockerRepositoryCheck=2019-04-03T03:14:47Z
+			samples.operator.openshift.io/version=4.0.0-0.9
+Image Repository:	image-registry.openshift-image-registry.svc:5000/openshift/ruby
+Image Lookup:		local=false
+Unique Images:		5
+Tags:			6
+
+2.5 (latest)
+  tagged from registry.redhat.io/rhscl/ruby-25-rhel7:latest
+    prefer registry pullthrough when referencing this tag
+
+  Build and run Ruby 2.5 applications on RHEL 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/sclorg/s2i-ruby-container/blob/master/2.5/README.md.
+  Tags: builder, ruby
+  Supports: ruby:2.5, ruby
+  Example Repo: https://github.com/sclorg/ruby-ex.git
+
+  * registry.redhat.io/rhscl/ruby-25-rhel7@sha256:6efe60ea4a85c9badcc8150368477171d0748b74b126b568873e645d26428093
+      3 hours ago
+
+2.4
+  tagged from registry.redhat.io/rhscl/ruby-24-rhel7:latest
+    prefer registry pullthrough when referencing this tag
+
+  Build and run Ruby 2.4 applications on RHEL 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/sclorg/s2i-ruby-container/blob/master/2.4/README.md.
+  Tags: builder, ruby
+  Supports: ruby:2.4, ruby
+  Example Repo: https://github.com/sclorg/ruby-ex.git
+
+  * registry.redhat.io/rhscl/ruby-24-rhel7@sha256:be556eedae4dd46cb560c8698e93dd72f588ee335fb59667deb1fa371199dca6
+      3 hours ago
+
+2.3
+  tagged from registry.redhat.io/rhscl/ruby-23-rhel7:latest
+    prefer registry pullthrough when referencing this tag
+
+  Build and run Ruby 2.3 applications on RHEL 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/sclorg/s2i-ruby-container/blob/master/2.3/README.md.
+  Tags: builder, ruby
+  Supports: ruby:2.3, ruby
+  Example Repo: https://github.com/sclorg/ruby-ex.git
+
+  * registry.redhat.io/rhscl/ruby-23-rhel7@sha256:ddb507067ef7eb9a5d66a1c6d55a6fe76dfe6921effce402ecd9a719ed7d07d5
+      3 hours ago
+
+2.2
+  tagged from registry.redhat.io/rhscl/ruby-22-rhel7:latest
+    prefer registry pullthrough when referencing this tag
+
+  Build and run Ruby 2.2 applications on RHEL 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/sclorg/s2i-ruby-container/tree/master/2.2/README.md.
+  Tags: hidden, builder, ruby
+  Supports: ruby:2.2, ruby
+  Example Repo: https://github.com/sclorg/ruby-ex.git
+
+  * registry.redhat.io/rhscl/ruby-22-rhel7@sha256:2e83b9e07e85960060096b6aff7ee202a5f52e0e18447641b080b1f3879e0901
+      3 hours ago
+
+2.0
+  tagged from registry.redhat.io/openshift3/ruby-20-rhel7:latest
+    prefer registry pullthrough when referencing this tag
+
+  Build and run Ruby 2.0 applications on RHEL 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/sclorg/s2i-ruby-container/tree/master/2.0/README.md.
+  Tags: hidden, builder, ruby
+  Supports: ruby:2.0, ruby
+  Example Repo: https://github.com/sclorg/ruby-ex.git
+
+  * registry.redhat.io/openshift3/ruby-20-rhel7@sha256:9cfdf4b811ace13d4c555335b249ab831832a384113035512abc9d4d5cc59716
+      3 hours ago
+#oc get pods -n openshift-controller-manager -o yaml |grep imageID |uniq
+      imageID: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:482b6f2aff8b0c8910ac7bd412cb754502503489cad0f6e59f57ba683ccefa82
+#oc  get pods -n openshift-controller-manager -o yaml  |grep phase:
+    phase: Running
+    phase: Running
+    phase: Running
+#oc get all -n dexpupgrade 
+NAME                   READY   STATUS              RESTARTS   AGE
+pod/jenkins-1-deploy   1/1     Running             0          33s
+pod/jenkins-1-j95vs    0/1     ContainerCreating   0          21s
+pod/ruby-ex-1-build    1/1     Running             0          53s
+NAME                              DESIRED   CURRENT   READY   AGE
+replicationcontroller/jenkins-1   1         1         0       34s
+NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)     AGE
+service/jenkins        ClusterIP   172.30.144.97    <none>        80/TCP      34s
+service/jenkins-jnlp   ClusterIP   172.30.18.102    <none>        50000/TCP   35s
+service/ruby-ex        ClusterIP   172.30.215.251   <none>        8080/TCP    54s
+NAME                                         REVISION   DESIRED   CURRENT   TRIGGERED BY
+deploymentconfig.apps.openshift.io/jenkins   1          1         1         config,image(jenkins:2)
+deploymentconfig.apps.openshift.io/ruby-ex   0          1         0         config,image(ruby-ex:latest)
+NAME                                     TYPE     FROM   LATEST
+buildconfig.build.openshift.io/ruby-ex   Source   Git    1
+NAME                                 TYPE     FROM          STATUS    STARTED          DURATION
+build.build.openshift.io/ruby-ex-1   Source   Git@c00ecd7   Running   57 seconds ago   
+NAME                                     IMAGE REPOSITORY                                                       TAGS   UPDATED
+imagestream.image.openshift.io/ruby-ex   image-registry.openshift-image-registry.svc:5000/dexpupgrade/ruby-ex          
+NAME                               HOST/PORT                                                               PATH   SERVICES   PORT    TERMINATION     WILDCARD
+route.route.openshift.io/jenkins   jenkins-dexpupgrade.apps.qe-upgradegroupd.qe.devcluster.openshift.com          jenkins    <all>   edge/Redirect   None
+================== MONITORING-TEAM  DATA Wed Apr  3 13:46:44 CST 2019 ============================================
+#oc get clusteroperator monitoring -o yaml
+apiVersion: config.openshift.io/v1
+kind: ClusterOperator
+metadata:
+  creationTimestamp: 2019-04-03T03:14:36Z
+  generation: 1
+  name: monitoring
+  resourceVersion: "58942"
+  selfLink: /apis/config.openshift.io/v1/clusteroperators/monitoring
+  uid: 9c2beb81-55be-11e9-bea8-06229b4180c6
+spec: {}
+status:
+  conditions:
+  - lastTransitionTime: 2019-04-03T03:18:29Z
+    status: "False"
+    type: Progressing
+  - lastTransitionTime: 2019-04-03T03:18:29Z
+    status: "False"
+    type: Failing
+  - lastTransitionTime: 2019-04-03T03:18:29Z
+    message: Successfully rolled out the stack.
+    status: "True"
+    type: Available
+  extension: null
+  relatedObjects: null
+  versions:
+  - name: operator
+    version: 4.0.0-0.9
+#for pod in $(oc -n openshift-monitoring get pod  | grep prometheus-k8s | awk '{print $1}'); do echo $pod; oc -n openshift-monitoring get pod $pod -oyaml | grep -i retention; done
+prometheus-k8s-0
+    - --storage.tsdb.retention=2d
+prometheus-k8s-1
+    - --storage.tsdb.retention=2d
+#oc -n openshift-monitoring logs $(oc -n openshift-monitoring get pod | grep telemeter-client | awk '{print $1}') -c telemeter-client | grep https://infogw.api.stage.openshift.com
+2019/04/03 05:47:08 Starting telemeter-client reading from https://prometheus-k8s.openshift-monitoring.svc:9091 and sending to https://infogw.api.stage.openshift.com (listen=localhost:8080)
+#oc get clusteroperator monitoring -o yaml
+apiVersion: config.openshift.io/v1
+kind: ClusterOperator
+metadata:
+  creationTimestamp: 2019-04-03T03:14:36Z
+  generation: 1
+  name: monitoring
+  resourceVersion: "59574"
+  selfLink: /apis/config.openshift.io/v1/clusteroperators/monitoring
+  uid: 9c2beb81-55be-11e9-bea8-06229b4180c6
+spec: {}
+status:
+  conditions:
+  - lastTransitionTime: 2019-04-03T03:18:29Z
+    message: Successfully rolled out the stack.
+    status: "True"
+    type: Available
+  - lastTransitionTime: 2019-04-03T03:18:29Z
+    status: "False"
+    type: Progressing
+  - lastTransitionTime: 2019-04-03T03:18:29Z
+    status: "False"
+    type: Failing
+  extension: null
+  relatedObjects: null
+  versions:
+  - name: operator
+    version: 4.0.0-0.9
+================== LOGGING-TEAM  DATA Wed Apr  3 13:54:16 CST 2019 ============================================
+#oc exec -c elasticsearch $(oc get pods --selector component=elasticsearch -n openshift-logging | sed  -n 2p |awk '{print $1 }' ) -n openshift-logging -- es_cluster_health |grep status
+  "status" : "green",
+#oc exec -c elasticsearch $(oc get pods --selector component=elasticsearch -n openshift-logging | sed  -n 2p |awk '{print $1 }' ) -n openshift-logging -- es_util --query=_cat/indices?v
+health status index        uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+green  open   .searchguard 23IRvtj8T2WgOYfbNe8Exg   1   1          5            1    241.2kb        120.6kb
+#oc get pods --selector component=elasticsearch -n openshift-logging
+NAME                                            READY   STATUS    RESTARTS   AGE
+elasticsearch-cdm-jau0bvjm-1-7bc56cdc4c-zjdfn   1/2     Running   0          5m29s
+elasticsearch-cdm-jau0bvjm-2-6964c4c9d7-4bbjl   1/2     Running   0          5m21s
+elasticsearch-cdm-jau0bvjm-3-5dc766845d-w8bgp   1/2     Running   0          5m15s
+#oc get pods --selector component=kibana -n openshift-logging 
+NAME                      READY   STATUS    RESTARTS   AGE
+kibana-7fb4fd4cc9-ztx7s   2/2     Running   0          5m37s
+#oc get pods --selector component=fluentd -n openshift-logging
+NAME            READY   STATUS    RESTARTS   AGE
+fluentd-29zrg   1/1     Running   0          5m32s
+fluentd-4xlf2   1/1     Running   0          5m32s
+fluentd-bsx5d   1/1     Running   0          5m32s
+fluentd-db29n   1/1     Running   0          5m32s
+fluentd-gp9qj   1/1     Running   0          5m32s
+fluentd-l8xlc   1/1     Running   0          5m32s
+#oc exec -c elasticsearch $(oc get pods --selector component=elasticsearch -n openshift-logging | sed  -n 2p |awk '{print $1 }') -- es_cluster_health
+{
+  "cluster_name" : "elasticsearch",
+  "status" : "green",
+  "timed_out" : false,
+  "number_of_nodes" : 3,
+  "number_of_data_nodes" : 3,
+  "active_primary_shards" : 1,
+  "active_shards" : 2,
+  "relocating_shards" : 0,
+  "initializing_shards" : 0,
+  "unassigned_shards" : 0,
+  "delayed_unassigned_shards" : 0,
+  "number_of_pending_tasks" : 0,
+  "number_of_in_flight_fetch" : 0,
+  "task_max_waiting_in_queue_millis" : 0,
+  "active_shards_percent_as_number" : 100.0
+}
+#oc exec -c elasticsearch $(oc get pods --selector component=elasticsearch -n openshift-logging | sed  -n 2p |awk '{print $1}' ) -- es_util --query=_cat/shards
+.searchguard 0 p STARTED 5 120.6kb 10.128.2.36 elasticsearch-cdm-jau0bvjm-2
+.searchguard 0 r STARTED 5 120.6kb 10.129.2.33 elasticsearch-cdm-jau0bvjm-3
+^[[31m Please MANUALLY access Kibana route via admin and normal useres and save some data: https://kibana-openshift-logging.apps.qe-upgradegroupd.qe.devcluster.openshift.com ^[[0m
+

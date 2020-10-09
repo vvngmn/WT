@@ -1,0 +1,13 @@
+This tool help you to trigger runner-v3 jenkins job in terminal. 
+To use it, you need to:
+1. Have python3 environment
+2. Install jenkinsapi package via $pip install jenkinsapi
+3. Set jenkins API token:
+   3.1 Get jenkins API token
+      Log in to Jenkins. 
+        Click your name (upper-right corner).
+        Click Configure (left-side menu).
+        Click Show API Token.
+   3.2 update script per your own jenkins account
+      $sed -i -r "/JENKINS_USER_ID/s/([A-Z|/b]+=)(.*)/\1$jenkins_id/"  jenkins_trigger_cases.sh
+      $sed -i -r "/JENKINS_USER_TOKEN/s/([A-Z|/b]+=)(.*)/\1$jenkins_token/"  jenkins_trigger_cases.sh

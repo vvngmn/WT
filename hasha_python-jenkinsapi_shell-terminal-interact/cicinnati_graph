@@ -1,0 +1,129 @@
+{
+  "nodes": [
+    {
+      "version": "4.0.0-0.nightly-2019-03-06-074438",
+      "payload": "registry.svc.ci.openshift.org/ocp/release:4.0.0-0.nightly-2019-03-06-074438",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-5",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-5",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-4",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-4",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-6",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-6",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-7",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-7",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-8",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-8",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-9",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-9",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-0.1",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-0.1",
+      "metadata": {
+        "description": "This is the beta1 image based on the 4.0.0-0.nightly-2019-01-15-010905 build"
+      }
+    },
+    {
+      "version": "4.0.0-0.okd-0",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-0.okd-0",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-0.2",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-0.2",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-0.3",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-0.3",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-0.4",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-0.4",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-0.5",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-0.5",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-0.6",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-0.6",
+      "metadata": {}
+    },
+    {
+      "version": "4.0.0-0.7",
+      "payload": "quay.io/openshift-release-dev/ocp-release:4.0.0-0.7",
+      "metadata": {
+        "description": "Beta 2"
+      }
+    }
+  ],
+  "edges": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      12,
+      13
+    ]
+  ]
+}
